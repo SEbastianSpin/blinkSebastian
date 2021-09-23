@@ -37,7 +37,7 @@ class watch {
   }
 
   countdown(){
-  setInterval(()=>{
+  let timex=setInterval(()=>{
 
     ///analog
 
@@ -48,12 +48,12 @@ class watch {
 
 
     console.log(percent);
-    if(percent<0.90 && percent >0.70){
-      $('html').css({"background-image":"linear-gradient(135deg, #5EACBD 60%, #F6E1CF)"});
-    }
-    else if(percent <0.70){
-       $('html').css({"background-image":"linear-gradient(135deg, #F6E1CF 60%, black)"});
-    }
+    // if(percent<0.90 && percent >0.70){
+    //   $('html').css({"background-image":"linear-gradient(135deg, #5EACBD 60%, #F6E1CF)"});
+    // }
+    // else if(percent <0.70){
+    //    $('html').css({"background-image":"linear-gradient(135deg, #F6E1CF 60%, black)"});
+    // }
 
 
     ///Digital
@@ -64,6 +64,9 @@ class watch {
     }
     else if(this.sec>0){
       this.sec--;
+    }
+    else{
+      clearInterval(timex);
     }
 
 
