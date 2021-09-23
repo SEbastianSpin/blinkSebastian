@@ -101,4 +101,4 @@ var Pomidoro=new watch(30,canvas);
 
 
 
-//Pomidoro.countdown();
+Pomidoro.countdown();
