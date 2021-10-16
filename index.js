@@ -35,6 +35,7 @@ class watch {
     this.sec =0;
     this.analog=analog;
     this.time=0;
+    this.percent=0;
   }
 
   countdown(){
@@ -43,12 +44,11 @@ this._time=timex;
     ///analog
 
     //$(".display").text(this.min+":"+this.sec);
+    this.percent=(this.min*60+this.sec)/this.startp;
+    this.draw(Math.PI*1.5,(Math.PI*1.999)*this.percent-(Math.PI/2));
 
-    var percent=(this.min*60+this.sec)/this.startp;
-    this.draw(Math.PI*1.5,(Math.PI*1.999)*percent-(Math.PI/2));
 
-
-    console.log(percent);
+    console.log(this.percent);
     // if(percent<0.90 && percent >0.70){
     //   $('html').css({"background-image":"linear-gradient(135deg, #5EACBD 60%, #F6E1CF)"});
     // }
@@ -67,8 +67,7 @@ this._time=timex;
       this.sec--;
     }
     else{
-      percent=(this.startp/60)/this.startp;
-        this.min=this.startp/60;
+this.restart();
     }
 
 
@@ -82,6 +81,10 @@ this._time=timex;
 }
 stop(){
     clearInterval(this._time);
+}
+restart(){
+    this.percent=(this.startp/60)/this.startp;
+    this.min=this.startp/60;
 }
 draw(begin,end){///begin Math.PI*(3/2)
   if (canvas.getContext) {
