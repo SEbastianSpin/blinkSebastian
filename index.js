@@ -67,7 +67,8 @@ class watch {
       this.sec--;
     }
     else{
-this.restart();
+    var notifi = new Notification('Hi there!');
+    this.restart();
     }
 
 
