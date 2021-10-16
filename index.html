@@ -6,13 +6,20 @@
   <title>Pomidoro</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body onload="notify()">
 
-  <button type="button" name="button" onclick="Pomidoro.countdown()">Start</button>
-  <button type="button" name="button" onclick="Pomidoro.stop()">stop</button>
-  <button type="button" name="button" onclick="Pomidoro.restart()">restart</button>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group me-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-primary" onclick="Pomidoro.countdown()">Start</button>
+    <button type="button" class="btn btn-primary" onclick="Pomidoro.stop()">stop</button>
+    <button type="button" class="btn btn-primary" onclick="Pomidoro.restart()">restart</button>
+
+  </div>
+
+
   <div class="watch">
     <div class="display">
 

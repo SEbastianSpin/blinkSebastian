@@ -39,8 +39,8 @@ class watch {
   }
 
   countdown(){
-  let timex=setInterval(()=>{
-this._time=timex;
+  this._time=setInterval(()=>{
+
     ///analog
 
     //$(".display").text(this.min+":"+this.sec);
@@ -85,6 +85,7 @@ stop(){
 restart(){
     this.percent=(this.startp/60)/this.startp;
     this.min=this.startp/60;
+    //this.countdown(); issues here
 }
 draw(begin,end){///begin Math.PI*(3/2)
   if (canvas.getContext) {
