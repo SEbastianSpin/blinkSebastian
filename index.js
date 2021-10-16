@@ -29,16 +29,17 @@ let notify=()=>{
 
 class watch {
 
-  constructor(minutes,analog, hour) {
+  constructor(minutes=0,analog=0,hour=0) {
     this.min =minutes;
     this.startp=minutes*60;
     this.sec =0;
     this.analog=analog;
+    this.time=0;
   }
 
   countdown(){
   let timex=setInterval(()=>{
-
+this._time=timex;
     ///analog
 
     //$(".display").text(this.min+":"+this.sec);
@@ -66,7 +67,8 @@ class watch {
       this.sec--;
     }
     else{
-      clearInterval(timex);
+      percent=(this.startp/60)/this.startp;
+        this.min=this.startp/60;
     }
 
 
@@ -78,7 +80,9 @@ class watch {
 
 
 }
-
+stop(){
+    clearInterval(this._time);
+}
 draw(begin,end){///begin Math.PI*(3/2)
   if (canvas.getContext) {
 
@@ -97,8 +101,3 @@ draw(begin,end){///begin Math.PI*(3/2)
 var canvas = document.getElementById("myCanvas");
 var Pomidoro=new watch(30,canvas);
 //Pomidoro.draw(Math.PI*(3/2),Math.PI*1.499);
-
-
-
-
-Pomidoro.countdown();
