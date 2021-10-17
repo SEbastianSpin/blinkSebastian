@@ -10,12 +10,12 @@ let notify=()=>{
     } else {
 
         if (Notification.permission === 'granted') {
-            var notifi = new Notification('Hi there!');
+          console.log("notifications permission granted")
         } else {
 
   Notification.requestPermission().then(function(p) {
             if(p === 'granted') {
-                  var notifi = new Notification('Hi there!');
+                  console.log("notifications permission granted")
             } else {
                 console.log('User blocked notifications.');
             }
@@ -67,14 +67,14 @@ class watch {
       this.sec--;
     }
     else{
-    var notifi = new Notification('Hi there!');
+    var notifi = new Notification('Time for a break');
     this.restart();
     }
 
 
 
 
-  }, 10);
+  }, 1000);
 
 
 
@@ -104,5 +104,5 @@ draw(begin,end){///begin Math.PI*(3/2)
 
 
 var canvas = document.getElementById("myCanvas");
-var Pomidoro=new watch(30,canvas);
+var Pomidoro=new watch(20,canvas);
 //Pomidoro.draw(Math.PI*(3/2),Math.PI*1.499);
